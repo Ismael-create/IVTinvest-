@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Compte - Site Professionnel</title>
+
+    <style>
+        /* Police globale et couleur de fond */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #FFFFFF;
+            margin: 0;
+            padding: 0;
+            color: #ADD8E6;
+        }
+
+        /* En-tête avec dégradé et ombre */
+        header {
+            background:#3115ff linear-gradient(90deg, #1E90FF, #4682B4);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            border-bottom: 2px solid #ffffff;
+        }
+
+        header h3 {
+            font-size: 32px;
+font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: 0;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        /* Animation pour l'en-tête */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Corps de page avec marge pour l'en-tête */
+        body {
+            margin-top: 80px; /* Pour éviter que le contenu soit masqué sous l'en-tête */
+        }
+
+        /* Conteneur des liens avec fond et ombre */
+        .service-links {
+            margin: 40px auto;
+            padding: 25px;
+            max-width: 900px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .service-links:hover {
+            transform: translateY(-10px); /* Effet de montée sur survol */
+        }
+
+        .service-links h4 {
+            font-size: 24px;
+            color: #4682B4;
+            margin-bottom: 12px;
+            font-weight: 600;
+            text-align: center;
+position: relative;
+            padding-left: 30px;
+        }
+
+    
+
+        .service-links p {
+            font-size: 18px;
+            color: #555;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .service-links a {
+            color: #1E90FF;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .service-links a:hover {
+            color:#ADD8E6;
+            text-decoration: underline;
+        }
+
+        /* Style pour les icônes */
+        .icon {
+            font-size: 20px;
+            margin-right: 8px;
+        }
+
+        /* Responsivité pour les petits écrans */
+        @media (max-width: 768px) {
+            header h3 {
+                font-size: 26px;
+            }
+
+            .service-links h4 {
+                font-size: 20px;
+            }
+
+            .service-links p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- En-tête avec animation -->
+    <header>
+        <h3>Mon Compte</h3>
+    </header>
+<!-- Section des liens avec animation et icônes -->
+    <section class="service-links">
+        <!-- Service Clients -->
+        <h4><span class="icon">📞</span>Service Clients :</h4>
+        <p>
+            <a href="https://t.me/IVTinvest" target="_blank">https://t.me/IVTinvest</a>
+        </p>
+
+        <!-- Lien du parrainage -->
+        <h4><span class="icon">🎁</span>Lien du parrainage :</h4>
+        <p>
+            <a href="https://www.exemple.com/parrainage" target="_blank">https://www.exemple.com/parrainage</a>
+        </p>
+
+        <!-- Canal télégramme -->
+        <h4><span class="icon">💬</span>Canal télégramme :</h4>
+        <p>
+            <a href="https://t.me/+gaohyuYumqkwMWU0" target="_blank">https://t.me/+gaohyuYumqkwMWU0</a>
+        </p>
+    </section>
+
+</body>
+
+</html>

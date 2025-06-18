@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mode de Paiement</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+    }
+    .card {
+      background: white;
+      border-radius: 100px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 100px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .title {
+      font-weight: bold;
+      font-size: 110px;
+      margin-bottom: 100px;
+    }
+    .number {
+      font-size: 100px;
+      margin-bottom: 15px;
+    }
+    .btn {
+      background-color: orange;
+      color: white;
+      border: none;
+      padding: 80px 100px;
+      border-radius: 100px;
+      cursor: pointer;
+      font-size:50px
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="title">Orange Money</div>
+    <div class="number" id="om">#150*14*695077115#</div>
+    <button class="btn" onclick="copier('om')">Copier</button>
+  </div>
+
+  <div class="card">
+    <div class="title">Mobile Money</div>
+    <div class="number" id="momo">05 87 6777775 43 21</div>
+<button class="btn" onclick="copier('momo')">Copier</button>
+  </div>
+
+  <script>
+    function copier(id) {
+      const text = document.getElementById(id).textContent;
+      navigator.clipboard.writeText(text);
+      alert("Numéro copié : " + text);
+    }
+  </script>
+
+</body>
+</html>

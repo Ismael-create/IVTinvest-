@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+    <style>
+        /* Styles pour le formulaire */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            padding: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #4682B4;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+ margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4682B4;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 40px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #5a9bd3;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Formulaire d'inscription -->
+    <div class="form-container">
+        <h2>Inscription</h2>
+        <form id="signup-form">
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" placeholder="Entrez votre email" required><br>
+
+            <label for="phone">Numéro de téléphone :</label>
+            <input type="text" id="phone" name="phone" placeholder="Entrez votre numéro de téléphone" maxlength="9" required><br>
+
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe" required><br>
+
+            <button type="submit">S'inscrire</button>
+        </form>
+        <p class="error" id="error-msg"></p>
+ <p>Déjà inscrit ? <a href="ss.html">Se connecter</a></p>
+    </div>
+
+    <script>
+        // Écouter l'événement de soumission du formulaire
+        document.getElementById('signup-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Empêche l'envoi du formulaire par défaut
+
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const password = document.getElementById('password').value;
+            const errorMsg = document.getElementById('error-msg');
+
+            // Vérifier que tous les champs sont remplis
+            if (!email || !phone || !password) {
+                errorMsg.textContent = 'Veuillez remplir tous les champs.';
+                return;
+            }
+
+            // Vérifier si le numéro de téléphone est déjà utilisé
+            if (localStorage.getItem(phone)) {
+                errorMsg.textContent = 'Ce numéro de téléphone est déjà inscrit avec un mot de passe unique.';
+                return;
+            }
+
+            // Enregistrer les informations de l'utilisateur
+            const userData = { email, phone, password };
+            localStorage.setItem(phone, JSON.stringify(userData));
+alert('Inscription réussie !');
+            window.location.href = 'hg.html'; // Rediriger vers la page de connexion après l'inscription
+        });
+    </script>
+
+</body>
+</html>

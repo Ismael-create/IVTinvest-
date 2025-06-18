@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page d'accueil</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #eafaff;
+      padding-bottom: 70px;
+    }
+
+    /* Carrousel */
+    .carousel {
+      width: 100%;
+      overflow: hidden;
+      height: 200px;
+    }
+
+    .slides {
+      display: flex;
+      width: 300%;
+      animation: slide 8s infinite;
+    }
+
+    .slides img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      33% { transform: translateX(-100%); }
+      66% { transform: translateX(-200%); }
+      100% { transform: translateX(0); }
+    }
+
+    /* Section info */
+    .info-section {
+ background: #d6f3ff;
+      padding: 15px;
+    }
+
+    .info-section h2 {
+      margin-bottom: 15px;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      background: white;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      padding: 10px;
+    }
+
+   
+
+    .info-item p {
+      font-size: 14px;
+      color: #333;
+    }
+
+    /* Barre navigation bas */
+    .navbar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 65px;
+      background: white;
+      border-top: 1px solid #ccc;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      box-shadow: 0 -1px 5px rgba(0,0,0,0.1);
+    }
+
+    .navbar a {
+      color: gray;
+      text-decoration: none;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .navbar a img {
+      width: 24px;
+      height: 24px;
+      margin-bottom: 3px;
+      filter: grayscale(100%);
+    }
+
+    .navbar a.active,
+    .navbar a:hover {
+      color: #007bff;
+    }
+
+    .navbar a.active img,
+    .navbar a:hover img {
+      filter: grayscale(0%);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Carousel -->
+<div class="carousel">
+    <div class="slides">
+      <img src="f.jpg" alt="Image 1">
+      <img src="h.jpg" alt="Image 2">
+      <img src="a.jpg" alt="Image 3">
+      <img src="d.jpg" alt="image 4">
+    </div>
+  </div>
+
+  <!-- Informations -->
+  <div class="info-section">
+  <h2>Information</h2>
+
+  <a href="1.html" class="info-box">
+    ℹ️
+  <span><h4>Certification Officiel Du premier Café reconnu 
+    
+   </h4> </span>
+  </a>
+
+  <a href="2.html" class="info-box">
+    ℹ️
+    <span><h4>Première Production Du Café inter continental</h4></span>
+  </a>
+
+  <a href="3.html" class="info-box">
+    ℹ️
+    <span><h4>Le Commerce Equitable Du Café es revenue</span></h4>
+  </a>
+</div>
+
+  <!-- Barre navigation -->
+  <div class="navbar">
+    <a href="hg.html" class="active"><img src="10.png" alt="Accueil"><br>Home</a>
+    <a href="hb.html"><img src="11.png" alt="Produit"><br>Produit</a>
+    <a href="hb.html"><img src="7.png" alt="Portefeuille"><br>Portefeuille</a>
+    <a href="contact.html"><img src="user.png" alt="Mon"><br>Mon</a>
+  </div>
+
+  <script>
+    const links = document.querySelectorAll('.navbar a');
+    links.forEach(link => {
+ link.addEventListener('click', () => {
+        links.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
+<style >
+.info-section {
+  background-color: #e0f7fa;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.info-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: black;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+ transition: 0.3s;
+}
+
+.info-box:hover {
+  background-color: #f0f0f0;
+}
+
+.info-box img {
+  width: 40px;
+  height: 40px;
+}
+<style>
+    
+    
+ 

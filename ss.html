@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    <style>
+        /* Styles similaires à ceux de la page d'inscription */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            padding: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+         
+        
+            
+         
+        }
+        
+         
+        
+        
+
+        .form-container {
+       
+            width:100%;
+            max-width: 300px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+
+        h2 {
+            text-align: center;
+            color: #4682B4;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4682B4;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 40px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #5a9bd3;
+        }
+
+        .error {
+            color: rgb(55, 0, 255);
+        }
+    </style>
+</head>
+<body>
+
+
+
+
+    <!-- Formulaire de connexion -->
+    <div class="form-container">
+        <h2>Connexion</h2>
+        <form id="login-form">
+            <label for="login-phone">Numéro de téléphone :</label>
+            <input type="text" id="login-phone" name="phone" placeholder="Entrez votre numéro de téléphone" required><br>
+
+            <label for="login-password">Mot de passe :</label>
+            <input type="password" id="login-password" name="password" placeholder="Entrez votre mot de passe" required><br>
+
+            <button type="submit">Se connecter</button>
+        </form>
+        <p class="error" id="login-error"></p>
+        <p>Pas encore inscrit ? <a href="ib.html">Inscrivez-vous ici</a></p>
+    </div>
+
+    <script>
+        // Écouter l'événement de soumission du formulaire
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Empêche l'envoi du formulaire par défaut
+const phone = document.getElementById('login-phone').value;
+            const password = document.getElementById('login-password').value;
+            const errorMsg = document.getElementById('login-error');
+
+            // Vérifier si les champs sont remplis
+            if (!phone || !password) {
+                errorMsg.textContent = 'Veuillez remplir tous les champs.';
+                return;
+            }
+
+            // Récupérer les données de l'utilisateur
+            const storedUser = JSON.parse(localStorage.getItem(phone));
+
+            // Vérifier si le numéro de téléphone existe
+            if (!storedUser) {
+               
+                errorMsg.textContent = 'Ce numéro de téléphone n`est pas inscrit.';
+                return;
+            }
+
+            // Vérifier le mot de passe
+            if (storedUser.password !== password) {
+                errorMsg.textContent = 'Mot de passe incorrect.';
+                return;
+            }
+
+            // Connexion réussie
+            alert('Connexion réussie !');
+            window.location.href ='hg.html' 
+        });
+    </script>
+
+</body>
+</html>
+
